@@ -1,0 +1,319 @@
+* {
+	box-sizing: border-box !important;
+	background-repeat: no-repeat !important;
+	word-break: break-word !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	// overflow-y: scroll;
+	font-family: Montserrat;
+	// position: relative;
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+div,
+li,
+p,
+a,
+span,
+section,
+button {
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22.4px;
+	text-align: left;
+	color: #191919;
+}
+
+h1,
+h2 {
+	font-family: Prata;
+	font-size: 54px;
+	font-weight: 400;
+	line-height: 64.8px;
+	text-align: left;
+	color: #191919;
+	word-wrap: break-word;
+}
+
+h1.title {
+	margin-bottom: 40px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: Montserrat;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 33.6px;
+	text-align: left;
+	color: #191919;
+}
+
+@media (max-width: 470px) {
+
+	h1,
+	h2 {
+		font-family: Prata;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 38.4px;
+		text-align: left;
+	}
+
+	div,
+	li,
+	p,
+	a,
+	span,
+	section,
+	button {
+		font-family: Montserrat;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 19.6px;
+		text-align: left;
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: Montserrat;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 22.4px;
+		text-align: left;
+	}
+}
+
+a {
+	text-decoration: none;
+	transition: .5s;
+	cursor: pointer;
+}
+
+a:hover {
+	color: #E55570;
+}
+
+main {
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.padding {
+	padding: 0 25px;
+}
+
+@media (max-width: 350px) {
+	.padding {
+		padding: 0 15px;
+	}
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-direct {
+	flex-direction: column;
+}
+
+.smooth {
+	transition: .5s;
+}
+
+.smooth:hover {
+	transition: .5s;
+}
+
+.def_div {
+	width: 100%;
+	max-width: 1290px;
+	margin: 0 auto;
+}
+
+.button {
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 19.6px;
+	text-align: left;
+	color: #FFF;
+	padding: 5px;
+	background-color: #E55570;
+	transition: .5s;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button:hover {
+	background-color: #F94264;
+	transition: .5s;
+	color: #FFF;
+}
+
+.button_v2 {
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 19.6px;
+	text-align: left;
+	color: #E55570;
+	padding: 5px;
+	border: 1px solid #E55570;
+	background-color: #FFF;
+	transition: .5s;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button_v2:hover {
+	background-color: #E55570;
+	transition: .5s;
+	color: #FFF;
+}
+
+.button:disabled {
+	background-color: #E55570;
+	opacity: .6;
+	cursor: default;
+}
+
+.button:disabled:hover {
+	background-color: #E55570;
+	opacity: .6;
+	cursor: default;
+}
+
+.button_v2:disabled {
+	background-color: #FFF;
+	opacity: .6;
+	cursor: default;
+}
+
+.button_v2:disabled:hover {
+	background-color: #FFF;
+	opacity: .6;
+	cursor: default;
+}
+
+.hover_color {
+	color: #F94264;
+}
+
+.hover_back_color {
+	background-color: #F94264;
+}
+
+.before::before {
+	content: "";
+	max-width: 15px;
+	max-height: 15px;
+	min-width: 15px;
+	min-height: 15px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.after::after {
+	content: "";
+	max-width: 15px;
+	max-height: 15px;
+	min-width: 15px;
+	min-height: 15px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.invise {
+	display: none !important;
+	height: 0 !important;
+	width: 0 !important;
+}
+
+.no_vis {
+	opacity: 0;
+}
+
+.default {
+	width: 100%;
+	max-width: 1290px;
+	margin: 0 auto 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.default a {
+	color: #E55570;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+.default ul {
+	list-style-position: inside;
+	padding-left: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.default ol {
+	list-style-position: inside;
+	padding-left: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding-left: 0;
+}
+
+.default ul li {
+	list-style: disc;
+}
+
+.default ul li::marker {
+	color: #191919;
+}
+
+.default table {
+	width: 100%;
+}
+
+.default caption {
+	border-bottom: none;
+	background-color: #908ea3;
+}
+
+.default thead th {
+	background-color: #908ea3;
+}
+
+.default tbody td {
+	background-color: #d4d4da;
+	text-align: center;
+}
+
+.fancybox-button *,
+.fancybox-infobar * {
+	color: #FFF !important;
+}
