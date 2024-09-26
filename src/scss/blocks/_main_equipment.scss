@@ -1,0 +1,239 @@
+.main_equipment {
+    padding: 100px 0;
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
+    .subtitle {
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 33.6px;
+        text-align: left;
+        margin-bottom: 50px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .card {
+            padding: 50px;
+            background-color: #F5F7FC;
+            position: relative;
+            cursor: pointer;
+            transition: .5s;
+
+            .anons {
+                display: flex;
+                gap: 50px;
+                align-items: center;
+                max-width: 90%;
+
+                img {
+                    width: 146px;
+                    height: 95px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 500px;
+                }
+
+                .cont {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    h3 {
+                        font-family: Prata;
+                        font-size: 30px;
+                        font-weight: 400;
+                        line-height: 45px;
+                        text-align: left;
+                    }
+
+                    p {
+                        font-family: Montserrat;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 25.2px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) rotate(180deg);
+                right: 50px;
+                transition: .5s;
+
+                path {
+                    stroke: #191919;
+                    transition: .5s;
+                }
+            }
+
+            .detail {
+                display: none;
+                gap: 50px;
+                max-width: 90%;
+
+                img {
+                    width: 100%;
+                    max-width: 588px;
+                    height: 388px;
+                    border-radius: 500px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                h3 {
+                    font-family: Prata;
+                    font-size: 30px;
+                    font-weight: 400;
+                    line-height: 45px;
+                    text-align: left;
+                    margin-bottom: 10px;
+                }
+
+                .anon {
+                    font-family: Montserrat;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 25.2px;
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+
+                .detail_text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+
+        }
+
+        .card:hover {
+            background-color: #FDF3F5;
+            transition: .5s;
+
+            svg {
+                path {
+                    stroke: #E55670;
+                    transition: .5s;
+                }
+            }
+        }
+
+        .card.active {
+            .anons {
+                display: none;
+            }
+
+            .detail {
+                display: flex;
+            }
+
+            svg {
+                top: 50px;
+                transform: translateY(0) rotate(0);
+                transition: .5s;
+
+                path {
+                    stroke: #E55670;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .main_equipment .container .card .detail {
+        flex-direction: column;
+        max-width: none;
+
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+@media (max-width: 970px) {
+    .main_equipment .container .card .anons {
+        max-width: 80%;
+    }
+
+    .main_equipment .container .card {
+        padding: 30px 25px;
+    }
+
+    .main_equipment .container .card.active svg {
+        top: 30px;
+        right: 25px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 720px) {
+    .main_equipment .container .card .anons {
+        flex-direction: column;
+        align-items: start;
+        gap: 25px;
+        max-width: none;
+    }
+
+    .main_equipment .container .card .anons .cont h3 {
+        font-family: Prata;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        text-align: left;
+    }
+
+    .main_equipment .container .card .anons .cont p {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22.4px;
+        text-align: left;
+    }
+
+    .main_equipment .container .card svg {
+        top: 30px;
+        right: 25px;
+        width: 35px;
+        height: 35px;
+        transform: translateY(0) rotate(180deg);
+    }
+}
+
+@media (max-width: 470px) {
+    .main_equipment {
+        padding: 50px 0;
+    }
+
+    .main_equipment .container .card .detail img {
+        height: 185px;
+    }
+
+    .main_equipment .container .card.active svg,
+    .main_equipment .container .card svg {
+        top: 19px;
+        right: 20px;
+    }
+
+    .main_equipment .subtitle {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25.2px;
+        text-align: left;
+    }
+}

@@ -33,6 +33,10 @@ header {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    .header_container {
+        max-width: 1340px;
+    }
 }
 
 .header_cont_top {

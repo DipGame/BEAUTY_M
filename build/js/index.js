@@ -37,6 +37,75 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    
+
+    if (document.querySelector('[data-max-line]')) {
+        const feedText = document.querySelectorAll('[data-max-line]');
+        feedText.forEach(element => {
+            let maxLine = element.getAttribute('data-max-line');
+            let dopTitle = document.querySelector(`[data-for-max-line-text="${element.id}"]`);
+            const el = element; // Замените 'yourIdHere' на ID вашего элемента
+            const lineHeight = parseInt(window.getComputedStyle(el).lineHeight); // Определяем высоту строки
+            const lineCount = Math.ceil(el.scrollHeight / lineHeight) - 1;
+
+            if (lineCount > maxLine) {
+                element.setAttribute("style", `-webkit-line-clamp:${maxLine}`);
+                if (dopTitle) {
+                    removeClass(dopTitle, 'invise');
+                    dopTitle.addEventListener('click', () => {
+                        if (element.closest(".swiper-slide")) {
+                            addClass(element.closest(".swiper-slide"), 'v2');
+                        }
+                        addClass(dopTitle, 'invise');
+                        element.setAttribute("style", `-webkit-line-clamp:none`);
+                    })
+                }
+            }
+        });
+    }
+
+    if (document.querySelector('[data-max-card]')) {
+
+        const sectDataInvise = document.querySelectorAll('[data-max-card]');
+        sectDataInvise.forEach(sect => {
+            let btnMore = document.querySelector(`[for='${sect.id}']`);
+            let dataInvise = sect.getAttribute('data-max-card');
+            let cards = sect.querySelectorAll('.card');
+            let num = 0;
+            cards.forEach(element => {
+                if (num > dataInvise - 1) {
+                    addClass(element, 'invise');
+                }
+                num++;
+            });
+
+            btnMore.addEventListener('click', () => {
+                if (sect.querySelector('.card.invise')) {
+                    let num_2 = 0;
+                    cards.forEach(element => {
+                        if (element.classList.contains('invise')) {
+                            if (num_2 < 3) {
+                                removeClass(element, 'invise');
+                                if (!sect.querySelector('.card.invise')) {
+                                    addClass(btnMore, 'invise');
+                                }
+                            } else {
+                                if (!sect.querySelector('.card.invise')) {
+                                    addClass(btnMore, 'invise');
+                                }
+                            }
+                            num_2++;
+                        }
+                    });
+                } else {
+                    addClass(btnMore, 'invise');
+                }
+            })
+        })
+
+
+    }
+
     if (document.querySelector('.header_fixed_container')) {
         const headerHiddenFixedContainer = document.querySelector('.header_fixed_container');
         const btnOpenHiddenMenu = document.querySelector('.burger_menu_open_btn');
@@ -71,9 +140,19 @@ document.addEventListener("DOMContentLoaded", function () {
         const cardsAns = contAns.querySelectorAll(".card");
 
         cardsAns.forEach(card => {
-            card.addEventListener('click', () => { 
+            card.addEventListener('click', () => {
                 toggleClass(card, 'active');
-             })
+            })
+        });
+    }
+
+    if (document.getElementById("anons-detail")) {
+        const anonsDetailContainer = document.getElementById('anons-detail');
+        const anonsDetailCards = anonsDetailContainer.querySelectorAll('.card');
+        anonsDetailCards.forEach(card => {
+            card.addEventListener('click', () => {
+                toggleClass(card, 'active');
+            })
         });
     }
 

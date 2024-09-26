@@ -39,22 +39,7 @@
         }
     }
 
-    .def-swiper-button {
-        min-width: 60px;
-        min-height: 60px;
-        cursor: pointer;
-
-        rect {
-            transition: .5s;
-        }
-    }
-
-    .def-swiper-button:hover {
-        rect {
-            fill: #FDF3F5;
-            transition: .5s;
-        }
-    }
+    
 
     .swiper_container {
         position: absolute;
@@ -116,5 +101,22 @@
     .banerMainSwiper .swiper-slide .def_div .button {
         height: 55px;
         width: 145px;
+    }
+}
+
+.def-swiper-button {
+    min-width: 60px;
+    min-height: 60px;
+    cursor: pointer;
+
+    rect {
+        transition: .5s;
+    }
+}
+
+.def-swiper-button:hover {
+    rect {
+        fill: #FDF3F5;
+        transition: .5s;
     }
 }
