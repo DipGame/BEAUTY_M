@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-    
+
 
     if (document.querySelector('[data-max-line]')) {
         const feedText = document.querySelectorAll('[data-max-line]');
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (lineCount > maxLine) {
                 element.setAttribute("style", `-webkit-line-clamp:${maxLine}`);
                 if (dopTitle) {
+
                     removeClass(dopTitle, 'invise');
                     dopTitle.addEventListener('click', () => {
                         if (element.closest(".swiper-slide")) {
@@ -80,30 +81,51 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             btnMore.addEventListener('click', () => {
-                if (sect.querySelector('.card.invise')) {
-                    let num_2 = 0;
+
+                if (btnMore.id == 'open-all-cards') {
                     cards.forEach(element => {
-                        if (element.classList.contains('invise')) {
-                            if (num_2 < 3) {
-                                removeClass(element, 'invise');
-                                if (!sect.querySelector('.card.invise')) {
-                                    addClass(btnMore, 'invise');
-                                }
-                            } else {
-                                if (!sect.querySelector('.card.invise')) {
-                                    addClass(btnMore, 'invise');
-                                }
-                            }
-                            num_2++;
-                        }
+                        removeClass(element, 'invise');
                     });
-                } else {
                     addClass(btnMore, 'invise');
+                } else {
+                    if (sect.querySelector('.card.invise')) {
+                        let num_2 = 0;
+                        cards.forEach(element => {
+                            if (element.classList.contains('invise')) {
+                                if (num_2 < 3) {
+                                    removeClass(element, 'invise');
+                                    if (!sect.querySelector('.card.invise')) {
+                                        addClass(btnMore, 'invise');
+                                    }
+                                } else {
+                                    if (!sect.querySelector('.card.invise')) {
+                                        addClass(btnMore, 'invise');
+                                    }
+                                }
+                                num_2++;
+                            }
+                        });
+                    } else {
+                        addClass(btnMore, 'invise');
+                    }
                 }
             })
         })
 
 
+    }
+
+    if (document.querySelector('.open_hidd')) {
+        const btnOpenHidd = document.querySelectorAll('.open_hidd');
+        btnOpenHidd.forEach(btn => {
+            let forWho = btn.getAttribute('for');
+            let elHidd = document.getElementById(forWho);
+
+            btn.addEventListener('click', () => {
+                addClass(btn, 'invise');
+                addClass(elHidd, 'vis');
+            })
+        });
     }
 
     if (document.querySelector('.header_fixed_container')) {
@@ -136,13 +158,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (document.getElementById("cont_ans")) {
-        const contAns = document.getElementById("cont_ans");
-        const cardsAns = contAns.querySelectorAll(".card");
-
-        cardsAns.forEach(card => {
-            card.addEventListener('click', () => {
-                toggleClass(card, 'active');
-            })
+        const contAns = document.querySelectorAll("#cont_ans");
+        contAns.forEach(ans => {
+            if (ans.classList.contains('v3')) {
+                let btnlist = ans.querySelector(".first_pun");
+                btnlist.addEventListener('click', () => {
+                    toggleClass(ans, 'active');
+                })
+            } else {
+                let cardsAns = ans.querySelectorAll(".card");
+                cardsAns.forEach(card => {
+                    card.addEventListener('click', () => {
+                        toggleClass(card, 'active');
+                    })
+                });
+            }
         });
     }
 
@@ -193,19 +223,14 @@ document.addEventListener("DOMContentLoaded", function () {
         var popupCheckCloseBtn = popupCheck.querySelector('.close-btn');
 
         popupCloseBtn.addEventListener('click', () => {
-            removeClass(overlay, 'open');
+            removeClass(overlay_v2, 'open');
             removeClass(popupForm, 'open');
             removeClass(popupCheck, 'open');
         })
         popupCheckCloseBtn.addEventListener('click', () => {
-            removeClass(overlay, 'open');
+            removeClass(overlay_v2, 'open');
             removeClass(popupForm, 'open');
             removeClass(popupCheck, 'open');
-        })
-        overlay.addEventListener('click', () => {
-            document.querySelectorAll('.open').forEach(el => {
-                removeClass(el, 'open');
-            })
         })
     }
 

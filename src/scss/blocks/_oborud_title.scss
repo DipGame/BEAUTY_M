@@ -1,0 +1,27 @@
+.oborud_title {
+    margin-top: -35px;
+    margin-bottom: 60px;
+
+    .button_v3 {
+        text-decoration: none;
+        margin-top: -15px;
+    }
+
+    a {
+        color: #191919;
+    }
+
+    a.button_v3 {
+        color: #E55570;
+    }
+
+    a:hover {
+        color: #E55570;
+    }
+}
+
+@media (max-width: 470px) {
+    .oborud_title {
+        margin-top: 0;
+    }
+}

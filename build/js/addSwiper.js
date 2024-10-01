@@ -90,6 +90,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+    let beforeSwiper = new Swiper(".beforeSwiper", {
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 1200,
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 25,
+    });
 
     console.log('addSwiper.js finish work');
 });

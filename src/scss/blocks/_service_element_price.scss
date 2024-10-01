@@ -1,0 +1,188 @@
+.service_element_price {
+    padding: 100px 0;
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    h2 {
+        font-family: Prata;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 54px;
+        text-align: left;
+    }
+
+    h3 {
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 33.6px;
+        text-align: left;
+    }
+
+    .cont_1 {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 745px;
+
+        .button_v2 {
+            height: 60px;
+            max-width: 225px;
+        }
+
+        ul::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            li {
+                min-height: 60px;
+                padding: 10px 25px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .title_list {
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 22.4px;
+                    text-align: left;
+                    width: 460px;
+                    color: #131313;
+                }
+
+                .text {
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 22.4px;
+                    text-align: left;
+                    color: #131313;
+                    white-space: nowrap;
+                }
+            }
+
+            li.top_table {
+                padding: 0 25px 10px 0;
+                gap: 50px;
+
+                .title_list {
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 22.4px;
+                    text-align: left;
+                }
+
+                .text {
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 22.4px;
+                    text-align: left;
+                    color: #000;
+                }
+            }
+
+            li:nth-child(2n) {
+                background-color: #FDF3F5;
+            }
+        }
+    }
+
+    .cont_2 {
+
+
+        .container {
+            width: 100%;
+            max-width: 415px;
+            background-color: #F5F7FC;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                width: 100%;
+                height: 245px;
+                border-radius: 500px;
+            }
+
+            .button_v3 {
+                margin-top: 8px;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1280px) {
+    .service_element_price {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service_element_price .cont_1 ul {
+        width: 100%;
+    }
+
+    .service_element_price .cont_1 ul li .title_list {
+        width: 100%;
+    }
+
+    .service_element_price .cont_1 {
+        width: 100%;
+    }
+
+    .service_element_price .cont_2 .container {
+        max-width: none;
+        padding: 30px 25px;
+    }
+
+    .service_element_price h2 {
+        text-align: center;
+    }
+
+    .service_element_price .cont_2 .container img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 720px) {
+    .service_element_price .cont_2 .container img {
+        height: 192px;
+    }
+
+    .service_element_price .cont_1 ul li {
+        width: 745px;
+    }
+}
+
+@media (max-width: 470px) {
+
+
+    .service_element_price {
+        padding: 50px 0;
+    }
+
+    .service_element_price h2 {
+        font-family: Prata;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 45px;
+        text-align: left;
+    }
+}

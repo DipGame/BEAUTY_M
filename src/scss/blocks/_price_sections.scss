@@ -1,0 +1,311 @@
+.price_sections {
+    padding-bottom: 100px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    h2 {
+        font-family: Prata;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 54px;
+        text-align: left;
+        margin-bottom: 30px;
+
+    }
+
+    .div_menu {
+        background-color: #F5F7FC;
+        min-width: 306px;
+        max-width: 306px;
+        padding: 30px;
+        height: fit-content;
+
+        ul {
+            li {
+                a {
+                    border-bottom: 1px solid #D2D7E3;
+                    display: block;
+                    padding: 19px 0;
+                }
+            }
+
+            li:first-of-type {
+                border-top: 1px solid #D2D7E3;
+            }
+
+            li.active {
+                a {
+                    color: #E55570;
+                }
+            }
+        }
+    }
+
+    .price_list {
+        width: 100%;
+        max-width: 856px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .cont {
+            ul.v2 {
+                margin-bottom: 25px;
+
+                li {
+                    display: flex;
+                    gap: 20px;
+                    background-color: #FDF3F5;
+                    padding: 18px;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .title_list {
+                        color: #131313;
+                    }
+
+                    .text {
+                        font-family: Montserrat;
+                        font-weight: 600;
+                        line-height: 22.4px;
+                        text-align: left;
+                        color: #131313;
+                        min-width: 178px;
+                        white-space: nowrap;
+                    }
+                }
+
+                li:nth-child(2n) {
+                    background-color: #FFF;
+                }
+            }
+
+            h3 {
+                font-family: Montserrat;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            ul.v3 {
+                margin-bottom: 16px;
+
+                li {
+                    display: none;
+                    justify-content: space-between;
+                    gap: 20px;
+                    align-items: center;
+                    padding: 10px 25px;
+                    min-height: 60px;
+
+                    .first_pun_title {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    h4 {
+                        font-family: Montserrat;
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 33.6px;
+                        text-align: left;
+                        color: #FFF;
+                    }
+
+                    h5 {
+                        font-family: Montserrat;
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 25.2px;
+                        text-align: left;
+                        color: #FFF;
+                    }
+
+                    svg {
+                        min-width: 40px;
+                        min-height: 40px;
+                        max-width: 40px;
+                        max-height: 40px;
+
+                        path {
+                            transition: .5s;
+                            fill: #E55570;
+                        }
+
+                        path.back {
+                            transition: .5s;
+                        }
+                    }
+
+                    .title {
+                        font-family: Montserrat;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 22.4px;
+                        text-align: left;
+                        color: #131313;
+                    }
+
+                    .price {
+                        font-family: Montserrat;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 22.4px;
+                        text-align: right;
+                        color: #131313;
+                        white-space: nowrap;
+                    }
+                }
+
+                li.first_pun {
+                    background-color: #E55570;
+                    display: flex;
+                    cursor: pointer;
+                    transition: .5s;
+                }
+
+                li:nth-child(2n) {
+                    background-color: #FDF3F5;
+                }
+
+                @media (min-width: 1281px) {
+                    li.first_pun:hover {
+                        background-color: #F94264;
+                        transition: .5s;
+
+                        svg {
+                            path {
+                                stroke: #E55570;
+                                transition: .5s;
+                            }
+
+                            path.back {
+                                fill: #FFF;
+                                transition: .5s;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            ul.v3:last-of-type {
+                margin-bottom: 40px;
+            }
+
+            ul.v3.active {
+                margin-bottom: 40px;
+
+                li {
+                    display: flex;
+
+                    svg {
+                        transform: rotate(360deg);
+                        transition: .5s;
+
+                        path {
+                            stroke: #E55570;
+                            transition: .5s;
+                        }
+
+                        path.back {
+                            fill: #FFF;
+                            transition: .5s;
+                        }
+
+                        path.line_1 {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                li.first_pun {
+                    background-color: #F94264;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .price_sections .price_list .cont ul.v2 li .text {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 970px) {
+    .price_sections {
+        flex-direction: column;
+    }
+
+    .price_sections .div_menu {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 470px) {
+    .price_sections {
+        padding-bottom: 50px;
+        gap: 30px;
+
+        h2 {
+            font-family: Prata;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 36px;
+            text-align: left;
+        }
+    }
+
+    .price_sections .div_menu ul li a {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22.4px;
+        text-align: left;
+    }
+
+    .price_sections .price_list .cont ul.v2 li {
+        flex-direction: column;
+        align-items: start;
+        gap: 7px;
+    }
+
+    .price_sections .price_list .cont ul.v3 li h4 {
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 25.2px;
+        text-align: left;
+    }
+
+    .price_sections .price_list .cont ul.v3 li h5 {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22.4px;
+        text-align: left;
+    }
+
+    .price_sections .price_list .cont ul.v3 li .title {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22.4px;
+        text-align: left;
+    }
+
+    .price_sections .price_list .cont ul.v3 li .price {
+        font-family: Montserrat;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22.4px;
+        text-align: left;
+    }
+}

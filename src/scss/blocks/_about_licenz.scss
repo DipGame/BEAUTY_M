@@ -1,0 +1,72 @@
+.about_licenz {
+    padding: 100px 0;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: Montserrat;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+
+        .card {
+            height: 550px;
+            background-color: #FFF;
+            padding: 30px;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                height: 100%;
+                width: 100%;
+                transition: .5s;
+            }
+            
+        }
+
+        .card:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .about_licenz .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .about_licenz .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 470px) {
+    .about_licenz {
+        padding: 50px 0;
+    }
+
+    .about_licenz .grid {
+        
+        .card {
+            height: 370px;
+            max-width: 280px;
+            padding: 20px;
+        }
+    }
+}

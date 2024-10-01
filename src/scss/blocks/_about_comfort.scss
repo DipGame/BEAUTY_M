@@ -1,0 +1,43 @@
+.about_comfort {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 85px;
+    align-items: center;
+    background-color: #F5F7FC;
+    padding: 50px;
+
+    img {
+        width: 306px;
+        height: 335px;
+        border-radius: 200px 200px 0 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .default {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 970px) {
+    .about_comfort {
+        flex-direction: column;
+        gap: 25px;
+
+        img {
+            width: 100%;
+
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .about_comfort {
+        padding: 25px;
+        img {
+            height: 303px;
+        }
+    }
+}

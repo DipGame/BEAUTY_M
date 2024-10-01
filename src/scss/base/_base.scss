@@ -46,7 +46,22 @@ h2 {
 }
 
 h1.title {
-	margin-bottom: 40px;
+	margin: 60px auto;
+	width: 100%;
+	max-width: 1340px;
+	padding: 0 25px;
+}
+
+@media (max-width: 470px) {
+	h1.title {
+		margin: 60px auto 30px;
+	}
+}
+
+@media (max-width: 350px) {
+	h1.title {
+		padding: 0 15px;
+	}
 }
 
 h3,
@@ -189,6 +204,37 @@ main {
 	background-color: #E55570;
 	transition: .5s;
 	color: #FFF;
+}
+
+.button_v3 {
+	display: block;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22.4px;
+	text-align: left;
+	color: #E55570;
+	border-bottom: 1px dashed #E55570;
+	padding-bottom: 5px;
+	transition: .5s;
+	cursor: pointer;
+	width: fit-content;
+}
+
+@media (max-width: 470px) {
+	.button_v3 {
+		font-family: Montserrat;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 19.6px;
+		text-align: left;
+	}
+}
+
+.button_v3:hover {
+	background: none;
+	transition: .5s;
+	opacity: .5;
 }
 
 .button:disabled {
